@@ -14,6 +14,8 @@ import {
   WrapperLabel,
 } from './ContentOrder.style';
 import IconCopy from '../../../../../IconCopy';
+import Draggable from 'react-draggable';
+import {RxDragHandleHorizontal} from 'react-icons/rx'
 
 function ContentOrder({ dataOrders, productsListKey }) {
   const TITLE_LIST = ['Instrument', 'Side', 'Qty', 'Price', 'ID', 'button'];
@@ -68,9 +70,19 @@ function ContentOrder({ dataOrders, productsListKey }) {
   };
 
   return (
+    <Draggable
+    // allowAnyClick='true'
+    axis="both"
+    handle=".handle"
+    defaultPosition={{ x: 0, y: 0 }}
+    position={null}
+    grid={[25, 25]}
+    scale={1}
+    
+  >
     <WrapperOrdersContent>
       <WrapperLabel>
-        <Label>Orders</Label>
+        <Label>Orders <RxDragHandleHorizontal className='handle' color='white' size={24} style={{ background:"gray", borderRadius:"5px", left:"390",position:"fixed"}} /></Label>
         {!!dataOrders?.length && (
           <Button className="button-cancel-all" onClick={handleCancelAll}>
             Cancel All
@@ -131,6 +143,7 @@ function ContentOrder({ dataOrders, productsListKey }) {
           })}
       </ContentOrders>
     </WrapperOrdersContent>
+    </Draggable>
   );
 }
 

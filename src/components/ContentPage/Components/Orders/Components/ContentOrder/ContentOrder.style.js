@@ -8,7 +8,7 @@ export const Label = styled.div`
 `;
 
 export const WrapperLabel = styled.div`
-  width: 100%;
+  width: 80%;
   height: 38px;
   display: flex;
   align-items: center;
@@ -41,7 +41,6 @@ export const Title = styled.div`
 export const WrapperOrdersContent = styled.div`
   height: 100%;
   flex: 1;
-  min-width: 425px;
   border: 1px solid #262c2e;
   border-top: none;
   overflow: hidden;
@@ -51,7 +50,7 @@ export const WrapperOrdersContent = styled.div`
 
 export const WrapperTitle = styled.div`
   min-height: 38px;
-  width: %;
+
   display: flex;
   align-items: center;
   border: 1px solid #262c2e;

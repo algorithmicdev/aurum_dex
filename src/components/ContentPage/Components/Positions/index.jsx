@@ -7,6 +7,8 @@ import {
 } from './Positions.style';
 import { Label } from './Components/ContentPosition/ContentPosition.style';
 import ContentOrderList from './Components/ContentOrderList';
+import Draggable from 'react-draggable';
+import {RxDragHandleHorizontal} from 'react-icons/rx'
 
 export default function Position() {
   const {
@@ -55,14 +57,25 @@ export default function Position() {
 
   return (
     <>
+      <Draggable
+        // allowAnyClick='true'
+        axis="both"
+        handle=".handle"
+        defaultPosition={{ x: 0, y: 0 }}
+        position={null}
+        grid={[25, 25]}
+        scale={1}
+        
+      >
     <WrapperContentPosition>
-      <Label>Position</Label>
+      <Label>Position <RxDragHandleHorizontal className='handle' color='white' size={24} style={{ background:"gray", borderRadius:"5px", right:"4",position:"fixed"}} /></Label>
       <WrapperContentPositionTotal>{renderContent}</WrapperContentPositionTotal>
       {renderYourFills}
     </WrapperContentPosition>
     {/* <WrapperContentPosition>
     {renderYourFills}
     </WrapperContentPosition> */}
+    </Draggable>
     </>
   );
 }
