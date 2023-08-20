@@ -531,7 +531,7 @@ const Ladder = () => {
             onSelect={handleSelectGroup}
           />
         </ProjectWrapper>
-        <RxDragHandleHorizontal className='handle border border-white' color='white' size={40} style={{ background:"gray", borderRadius:"5px", right:"4",top:"6"}} />
+        <RxDragHandleHorizontal className='handle border border-white' color='white' size={40} style={{ background:"gray", borderRadius:"5px", right:"4",top:"6", cursor:'grab'}} />
       </WrapperDropdown>
       <LadderWrapper
         onMouseEnter={() => {

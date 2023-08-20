@@ -85,7 +85,7 @@ function Market() {
         
       >
     <WrapperContentMarket>
-      <Label>Market Trades <RxDragHandleHorizontal className='handle' color='white' size={24} style={{ background:"gray", borderRadius:"5px", right:"4",position:"fixed"}} /></Label>
+      <Label>Market Trades <RxDragHandleHorizontal className='handle' color='white' size={24} style={{ background:"gray", borderRadius:"5px", right:"4",position:"fixed", cursor:'grab'}} /></Label>
       {renderContentMarket}
       {loading && (
         <WrapperLoading>

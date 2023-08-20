@@ -82,7 +82,7 @@ function ContentOrder({ dataOrders, productsListKey }) {
   >
     <WrapperOrdersContent>
       <WrapperLabel>
-        <Label>Orders <RxDragHandleHorizontal className='handle' color='white' size={24} style={{ background:"gray", borderRadius:"5px", left:"390",position:"fixed"}} /></Label>
+        <Label>Orders <RxDragHandleHorizontal className='handle' color='white' size={24} style={{ background:"gray", borderRadius:"5px", left:"390",position:"fixed", cursor:'grab'}} /></Label>
         {!!dataOrders?.length && (
           <Button className="button-cancel-all" onClick={handleCancelAll}>
             Cancel All
