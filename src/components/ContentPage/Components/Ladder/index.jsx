@@ -514,7 +514,7 @@ const Ladder = () => {
     scale={1}
     
   >
-    <WrapperLadders>
+    <WrapperLadders style={{resize:'both', overflow:'auto'}}>
       <WrapperDropdown className={`${loading ? 'disable_select' : ''}`}>
         <ProjectWrapper>
           <Dropdown

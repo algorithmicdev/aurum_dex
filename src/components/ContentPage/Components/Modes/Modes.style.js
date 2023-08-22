@@ -11,6 +11,8 @@ export const WrapperContentMode = styled.div`
   display: flex;
   flex-direction: column;
   background-color: #14081f;
+  border-radius:10px;
+  margin:2px;
 `;
 
 export const WrapperTitle = styled.div`

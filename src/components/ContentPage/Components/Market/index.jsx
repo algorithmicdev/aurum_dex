@@ -84,7 +84,7 @@ function Market() {
         scale={1}
         
       >
-    <WrapperContentMarket>
+    <WrapperContentMarket style={{resize:'both', overflow:'auto'}}>
       <Label>Market Trades <RxDragHandleHorizontal className='handle' color='white' size={24} style={{ background:"gray", borderRadius:"5px", right:"4",position:"fixed", cursor:'grab'}} /></Label>
       {renderContentMarket}
       {loading && (

@@ -18,7 +18,7 @@ import Draggable from 'react-draggable';
 import {RxDragHandleHorizontal} from 'react-icons/rx'
 
 function ContentOrder({ dataOrders, productsListKey }) {
-  const TITLE_LIST = ['Instrument', 'Side', 'Qty', 'Price', 'ID', 'button'];
+  const TITLE_LIST = ['Instrument', 'Side', 'Qty', 'Price', 'ID'];
 
   const handleClickCancel = (product, id) => {
     const idToast = toast.loading(toastUICancelOrder.loading, {
@@ -80,9 +80,9 @@ function ContentOrder({ dataOrders, productsListKey }) {
     scale={1}
     
   >
-    <WrapperOrdersContent>
+    <WrapperOrdersContent style={{resize:'both', overflow:'auto'}}>
       <WrapperLabel>
-        <Label>Orders <RxDragHandleHorizontal className='handle' color='white' size={24} style={{ background:"gray", borderRadius:"5px", left:"390",position:"fixed", cursor:'grab'}} /></Label>
+        <Label>Orders <RxDragHandleHorizontal className='handle' color='white' size={24} style={{ background:"gray", borderRadius:"5px", right:"6",position:"fixed", cursor:'grab'}} /></Label>
         {!!dataOrders?.length && (
           <Button className="button-cancel-all" onClick={handleCancelAll}>
             Cancel All
@@ -128,7 +128,7 @@ function ContentOrder({ dataOrders, productsListKey }) {
                   {`${item?.id}`.substring(len - 4, len)}
                   <IconCopy className="icon-copy" value={`${item?.id}`} />
                 </div>
-                <WrapperButton className="button">
+                {/* <WrapperButton className="button">
                   <Button
                     className="style-button button-cancel"
                     onClick={() =>
@@ -137,7 +137,7 @@ function ContentOrder({ dataOrders, productsListKey }) {
                   >
                     Cancel
                   </Button>
-                </WrapperButton>
+                </WrapperButton> */}
               </WrapperRowContent>
             );
           })}

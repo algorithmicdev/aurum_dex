@@ -2,12 +2,12 @@ import styled from 'styled-components';
 
 export const WrapperContentMarket = styled.div`
   height: 100%;
-  width: 70%;
-  min-width: 590px;
   border: 1px solid #262c2e;
   overflow: hidden;
   position: relative;
   background-color: #14081f;
+  border-radius:10px;
+  margin:2px;
 `;
 export const WrapperLoading = styled.div`
   position: absolute;

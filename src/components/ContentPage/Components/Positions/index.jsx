@@ -67,7 +67,7 @@ export default function Position() {
         scale={1}
         
       >
-    <WrapperContentPosition>
+    <WrapperContentPosition style={{resize:'both', overflow:'auto'}}>
       <Label>Position <RxDragHandleHorizontal className='handle' color='white' size={24} style={{ background:"gray", borderRadius:"5px", right:"4",position:"fixed", cursor:'grab'}} /></Label>
       <WrapperContentPositionTotal>{renderContent}</WrapperContentPositionTotal>
       {renderYourFills}

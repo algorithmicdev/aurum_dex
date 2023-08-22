@@ -143,8 +143,8 @@ const ChartView = ({ productSelect }) => {
     scale={1}
     
   >
-    <WrapperChart>
-      <Chart>
+    <WrapperChart style={{resize:'both', overflow:'auto'}}>
+      <Chart >
       <RxDragHandleHorizontal className='handle ' color='white' size={24} style={{ background:"gray", borderRadius:"5px", right:"50",top:"6",position:'fixed', zIndex:'10', cursor:'grab'}} />
         <div id={containerId.current} className="tradingview"></div>
         <IconLoading className="icon-loading-chart" isWhite />
@@ -163,6 +163,8 @@ const WrapperChart = styled.div`
   border: 1px solid #262c2e;
   position: relative;
   overflow: hidden;
+  border-radius:10px;
+  margin:2px;
   
 
   article {

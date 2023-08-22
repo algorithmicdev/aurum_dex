@@ -23,7 +23,7 @@ export default function Modes() {
     scale={1}
     
   >
-    <WrapperContentMode>
+    <WrapperContentMode style={{resize:'both', overflow:'auto'}}>
       <WrapperTitle>
         <Title isSelect={type === 'sweep'} onClick={() => setType('sweep')}>
           Sweep Mode
@@ -31,7 +31,7 @@ export default function Modes() {
         <Title isSelect={type === 'mode'} onClick={() => setType('mode')}>
           Pro Mode
         </Title>
-        <RxDragHandleHorizontal className='handle' color='white' size={24} style={{ background:"gray", borderRadius:"5px", left:"390",top:"6",position:"fixed", cursor:'grab'}} />
+        <RxDragHandleHorizontal className='handle' color='white' size={24} style={{ background:"gray", borderRadius:"5px", right:"4",top:"6",position:"fixed", cursor:'grab'}} />
       </WrapperTitle>
       <WrapperContentModes>
         {type === 'sweep' && <Sweep />}
