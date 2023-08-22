@@ -24,17 +24,11 @@ export const WrapperContentLeft = styled.div`
 
 export const WrapperContentChart = styled.div`
   display: flex;
-  width: 100%;
-  height: calc(100vh - 500px);
-  max-height: calc(100vh - 500px);
-  min-height: 400px;
-  box-sizing: border-box;
-  overflow-y: hidden;
 `;
 export const WrapperOrderRight = styled.div`
   display: flex;
   flex: 1;
-  min-width: 605px;
+  min-width: 420px;
 `;
 
 export const WrapperContentRight = styled.div`

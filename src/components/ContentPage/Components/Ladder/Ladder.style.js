@@ -10,7 +10,9 @@ export const WrapperLadders = styled.div`
   position: relative;
   background-color: #14081f;
   border-left: 1px solid #262c2e;
-  border-bottom-right-radius:20px;
+  border-radius:10px;
+  margin:2px;
+  
 
   .disable_select {
     pointer-events: none;

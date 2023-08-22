@@ -2,6 +2,8 @@
 import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import IconLoading from '@components/IconLoading';
+import Draggable from 'react-draggable';
+import {RxDragHandleHorizontal} from 'react-icons/rx'
 
 let tvScriptLoadingPromise;
 const ChartView = ({ productSelect }) => {
@@ -131,12 +133,24 @@ const ChartView = ({ productSelect }) => {
   useEffect(createWidget, [productSelect]);
 
   return (
-    <WrapperChart>
-      <Chart>
+    <Draggable
+    // allowAnyClick='true'
+    axis="both"
+    handle=".handle"
+    defaultPosition={{ x: 0, y: 0 }}
+    position={null}
+    grid={[25, 25]}
+    scale={1}
+    
+  >
+    <WrapperChart style={{resize:'both', overflow:'auto'}}>
+      <Chart >
+      <RxDragHandleHorizontal className='handle ' color='white' size={24} style={{ background:"gray", borderRadius:"5px", right:"50",top:"6",position:'fixed', zIndex:'10', cursor:'grab'}} />
         <div id={containerId.current} className="tradingview"></div>
         <IconLoading className="icon-loading-chart" isWhite />
       </Chart>
     </WrapperChart>
+    </Draggable>
   );
 };
 
@@ -149,6 +163,8 @@ const WrapperChart = styled.div`
   border: 1px solid #262c2e;
   position: relative;
   overflow: hidden;
+  border-radius:10px;
+  margin:2px;
   
 
   article {

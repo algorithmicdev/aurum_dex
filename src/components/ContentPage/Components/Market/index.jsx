@@ -5,7 +5,8 @@ import IconLoading from '@components/IconLoading';
 import ContentMarket from './Components/ContentMarket';
 import { WrapperContentMarket, WrapperLoading } from './Market.style';
 import { Label } from '../Orders/Components/ContentOrder/ContentOrder.style';
-
+import Draggable from 'react-draggable';
+import {RxDragHandleHorizontal} from 'react-icons/rx'
 function Market() {
   const { productSelect, dataPnL, accountSelect } = useWallet();
   const refTimeout = useRef(null);
@@ -73,8 +74,18 @@ function Market() {
   }, [JSON.stringify(dataMarket), accountSelect, productSelect]);
 
   return (
-    <WrapperContentMarket>
-      <Label>Market Trades</Label>
+    <Draggable
+        // allowAnyClick='true'
+        axis="both"
+        handle=".handle"
+        defaultPosition={{ x: 0, y: 0 }}
+        position={null}
+        grid={[25, 25]}
+        scale={1}
+        
+      >
+    <WrapperContentMarket style={{resize:'both', overflow:'auto'}}>
+      <Label>Market Trades <RxDragHandleHorizontal className='handle' color='white' size={24} style={{ background:"gray", borderRadius:"5px", right:"4",position:"fixed", cursor:'grab'}} /></Label>
       {renderContentMarket}
       {loading && (
         <WrapperLoading>
@@ -82,6 +93,7 @@ function Market() {
         </WrapperLoading>
       )}
     </WrapperContentMarket>
+    </Draggable>
   );
 }
 

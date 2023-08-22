@@ -8,7 +8,7 @@ export const Label = styled.div`
 `;
 
 export const WrapperLabel = styled.div`
-  width: 100%;
+  width: 80%;
   height: 38px;
   display: flex;
   align-items: center;
@@ -40,18 +40,19 @@ export const Title = styled.div`
 
 export const WrapperOrdersContent = styled.div`
   height: 100%;
-  flex: 1;
-  min-width: 425px;
   border: 1px solid #262c2e;
   border-top: none;
-  overflow: hidden;
   box-sizing: border-box;
   background-color: #14081f;
+    border-radius:10px;
+  margin:2px;
+  resize:'both';
+  overflow:'auto';
 `;
 
 export const WrapperTitle = styled.div`
   min-height: 38px;
-  width: %;
+
   display: flex;
   align-items: center;
   border: 1px solid #262c2e;
@@ -89,7 +90,8 @@ export const ContentOrders = styled.div`
   flex-direction: column;
   width: 100%;
   max-height: calc(100% - 80px);
-  overflow: auto;
+  overflow: none;
+
 `;
 
 export const WrapperRowContent = styled.div`

@@ -10,8 +10,8 @@ export const StyledHeader = styled.header`
   background-color: #14081f;
   border: 1px solid #262c2e;
   z-index: 10;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
+  border-radius:10px;
+  margin:2px;
 `;
 
 export const WrapperRerRefresh = styled.div`

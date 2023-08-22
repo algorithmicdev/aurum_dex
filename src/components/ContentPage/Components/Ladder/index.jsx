@@ -7,6 +7,8 @@ import Dropdown from '@components/Dropdown';
 import IconLoading from '@components/IconLoading';
 import Tick from './Tick';
 import cloneDeep from 'lodash.clonedeep';
+import Draggable from 'react-draggable';
+import {RxDragHandleHorizontal} from 'react-icons/rx'
 
 import {
   ProjectWrapper,
@@ -502,7 +504,17 @@ const Ladder = () => {
   }, [JSON.stringify(newTicks)]);
 
   return (
-    <WrapperLadders>
+    <Draggable
+    // allowAnyClick='true'
+    axis="both"
+    handle=".handle"
+    defaultPosition={{ x: 0, y: 0 }}
+    position={null}
+    grid={[25, 25]}
+    scale={1}
+    
+  >
+    <WrapperLadders style={{resize:'both', overflow:'auto'}}>
       <WrapperDropdown className={`${loading ? 'disable_select' : ''}`}>
         <ProjectWrapper>
           <Dropdown
@@ -510,6 +522,7 @@ const Ladder = () => {
             defaultOption={selectedProduct}
             onSelect={handleSelectProduct}
           />
+          
         </ProjectWrapper>
         <ProjectWrapper className="group-select">
           <Dropdown
@@ -518,6 +531,7 @@ const Ladder = () => {
             onSelect={handleSelectGroup}
           />
         </ProjectWrapper>
+        <RxDragHandleHorizontal className='handle border border-white' color='white' size={40} style={{ background:"gray", borderRadius:"5px", right:"4",top:"6", cursor:'grab'}} />
       </WrapperDropdown>
       <LadderWrapper
         onMouseEnter={() => {
@@ -728,6 +742,7 @@ const Ladder = () => {
         </WrapperButton>
       </LadderWrapper>
     </WrapperLadders>
+    </Draggable>
   );
 };
 
